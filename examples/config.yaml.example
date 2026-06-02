@@ -1,0 +1,75 @@
+# Content Calendar Configuration
+# Copy this file to config.yaml and customize
+
+calendar:
+  name: My Content Calendar
+  timezone: UTC
+  default_content_type: blog_post
+
+platforms:
+  - name: blog
+    enabled: true
+    types:
+      - blog_post
+      - tutorial
+    schedules:
+      - days: [monday, wednesday, friday]
+        time: "09:00"
+  - name: twitter
+    enabled: true
+    types:
+      - social_post
+      - thread
+    schedules:
+      - days: [monday, tuesday, wednesday, thursday, friday]
+        time: "12:00"
+  - name: linkedin
+    enabled: true
+    types:
+      - article
+      - social_post
+    schedules:
+      - days: [tuesday, thursday]
+        time: "10:00"
+
+content_types:
+  blog_post:
+    icon: "📝"
+    max_length: 3000
+    seo_enabled: true
+  social_post:
+    icon: "📱"
+    max_length: 280
+    seo_enabled: false
+  newsletter:
+    icon: "📧"
+    max_length: 5000
+    seo_enabled: true
+  video:
+    icon: "🎥"
+    max_length: null
+    seo_enabled: true
+
+ai:
+  provider: openai
+  model: gpt-4o-mini
+  temperature: 0.7
+  max_tokens: 1024
+
+export:
+  default_format: csv
+  output_dir: ./exports
+  formats:
+    - csv
+    - json
+    - markdown
+    - html
+    - icalendar
+
+storage:
+  backend: local
+  local:
+    path: ./data/calendar.json
+  # google_sheets:
+  #   sheet_id: your-google-sheet-id
+  #   credentials_file: ./credentials.json
