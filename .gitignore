@@ -1,0 +1,47 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+
+# Distribution
+build/
+dist/
+*.egg-info/
+
+# Data
+data/
+exports/
+
+# Config (keep .example)
+config.yaml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+.coverage
+htmlcov/
+coverage.xml
+
+# Mypy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Pytest
+.pytest_cache/
+
+# Logs
+*.log
